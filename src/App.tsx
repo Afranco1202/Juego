@@ -86,16 +86,18 @@ function App() {
 
 
 return(
-  <div>
-    <h1 className='text-center text-4xl m-4 font-bold'>JUEGO DE MEMORIA</h1>
+  <div className="min-h-screen w-full bg-gradient-to-b from-slate-900 via-slate-800 to-black text-white">
+  <div className='max-w-5xl mx-auto px-4 md:px-8'>
+    <h1 className='text-center text-4xl m-4 font-bold mb-6 md:mb-8 md:text-5xl'>JUEGO DE MEMORIA</h1>
     <div className='grid grid-cols-4 m-6'>
     {cards.map((e)=>(
-        <div className='border-6 text-4xl flex items-center justify-center p-4 cursor-pointer rounded-lg m-2 text-6xl text-shadow-md' key={e.id } onClick={()=>handleRevela(e.id)}>
+        <div className='border-6 text-4xl flex items-center justify-center p-4 cursor-pointer rounded-2xl m-2 text-6xl shadow-md' key={e.id } onClick={()=>handleRevela(e.id)}>
           <h1>{e.revela ? e.imagen: "❓"}</h1>
         </div>  
     ))}
     </div>
-    <button className='border-4 m-6 text-center text-3xl rounded-lg ' onClick={reiniciar}>Reiniciar </button>
+    <button className='mt-6 bg-cyan-400 text-black font-semibold px-6 py-3 rounded-2xl hover:bg-cyan-300 active:scale-95 transition-all shadow-lg' onClick={reiniciar}>Reiniciar </button>
+  </div>
   </div>
 )
 
